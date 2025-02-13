@@ -1,18 +1,17 @@
 package com.ffozdemir.contactapp.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.PrePersist;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.PrePersist;
 import java.time.LocalDateTime;
 
-@Entity
+@javax.persistence.Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,10 +28,12 @@ public class ContactMessage {
 	private String email;
 
 	@Column(nullable = false)
+	private String subject;
+
+	@Column(nullable = false)
 	private String message;
 
 	@Column(nullable = false)
-
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "US")
 	private LocalDateTime createdAt;
 

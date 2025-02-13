@@ -5,24 +5,17 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDateTime;
+import org.springframework.http.HttpStatus;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ContactResponse {
+public class ResponseMessage<T> {
 
-	private String name;
-
-	private String email;
-
-	private String subject;
-
+	private T returnBody;
 	private String message;
-
-	private LocalDateTime createdAt;
+	private HttpStatus httpStatus;
 
 }
