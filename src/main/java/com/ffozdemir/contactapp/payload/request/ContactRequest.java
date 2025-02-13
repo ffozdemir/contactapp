@@ -1,7 +1,13 @@
 package com.ffozdemir.contactapp.payload.request;
 
-import org.springframework.stereotype.Component;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
-@Component
+@Getter
+@Setter
+@AllArgsConstructor
+@Builder
 public class ContactRequest {
 }
